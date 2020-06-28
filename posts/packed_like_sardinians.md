@@ -3,19 +3,19 @@
 One of my interests in starting this blog is exploring how phenotypic differences between populations might in part be explained by genetic differences. A recent paper on this topic, Chen et al., explores how differences in height between mainland Europeans and inhabitants of the island of
 [Sardinia](https://en.wikipedia.org/wiki/Sardinia) may be caused by recent selection for shorter height in Sardinians.[^footer1]
 
-[^footer1]: [](https://www.gwern.net/docs/genetics/selection/2020-chen.pdf)
+[^footer1]: [Paper PDF](https://www.gwern.net/docs/genetics/selection/2020-chen.pdf)
 
 To give some background, it's known that there is a
 [North-South](https://www.worlddata.info/average-bodyheight.php) gradient of height in Europe, with Northern Europeans being ~3-5 cm (1-2 in) taller on average than their neighbors to the south. Sardinia is an island off of the coast of Italy that has the shortest population of anywhere in Europe, with an average male height around 1.7 m (5'7"), or about 1 standard deviation shorter than Northern Europeans.[^footer2] So, what's the cause of this average height difference? Height is a polygenic trait, meaning that that differences in height are mainly due to hundreds or thousands of genetic variants of small effect size throughout the genome. For two populations to have a large difference in a polygenic trait due to average differences in their genetics, they would need to systemically differ in the frequency of many of these variants, with the height-increasing alleles being more common in the taller population than in the shorter population.
 
-[^footer2]: https://pdfs.semanticscholar.org/d805/193d52b03fece18b1ef488093ffb80394279.pdf
+[^footer2]: [Paper PDF](https://pdfs.semanticscholar.org/d805/193d52b03fece18b1ef488093ffb80394279.pdf)
 
 Other studies have looked into potential genetic causes of height differences among Europeans before, but a common problem with evincing genetic causes of differences in polygenic traits between populations is confounding due to residual
 [population stratification](https://en.wikipedia.org/wiki/Population_stratification), or the systemic difference in allele frequency of genetic variants between populations. Population stratification confounding occurs when genetic variants are associated with a phenotypic differences between populations because they are associated with population structure (the set of allele frequencies within a population) rather than having a causal effect on the trait itself. This is illustrated in the
 [directed acyclic graph (DAG)](https://en.wikipedia.org/wiki/Directed_acyclic_graph#Causal_structures) below (made with
 [dagitty](https://www.dagitty.net)). In this scenario, it is the environment that has the only causal effect on height. The reason there is an spurious association between genes and height (shown by the red lines between Variant and Height) is because population structure and environment are both caused by other factors (called "History" here). If we were to adequately adjust for population structure, then those genetic variants would have no association with height. A classic example of a genetic variant associated with height in Europeans due to population stratification is the lactase persistence allele, which promotes lactose tolerance into adulthood. The lactase persistence allele is more common in Northern Europeans than Southern Europeans, and, since Northern Europeans are also taller than Southern Europeans on average, the lactase persistence allele is also associated with height, even though the ability to digest lactase is probably not biologically related to taller height, at least in modern populations where adequate nutrition does not typically require dairy consumption. And as we would expect, when population structure is accounted for, the lactase persistence allele is no longer associated with height.[^footer3]
 
-[^footer3]: http://www.biostat.jhsph.edu/~iruczins/teaching/misc/2008.140.668/papers/price2006.pdf
+[^footer3]: [Paper PDF](http://www.biostat.jhsph.edu/~iruczins/teaching/misc/2008.140.668/papers/price2006.pdf)
 
 ![DAG of population stratification](/images/dag1.png)
 
@@ -26,11 +26,11 @@ To evince genetic causation of height differences between populations, one would
 
 So, if population stratification is such a thorn for evincing genetic causes of differences in polygenic traits between populations, how did Chen et al. overcome it to provide robust evidence that Sardinians have a genetic predisposition for shorter height than mainland Europeans, and how did they show that this difference propensity is likely due to recent selection? What makes Chen et al. unique is that, unlike other studies that investigate height differences in Europeans, they did not rely on summary statistics from genome wide association studies (GWAS) performed on Europeans. Instead, they used summary statistics from a height GWAS using BioBank Japan (BBJ), which has all Japanese participants.[^footer4] Their reasoning was, essentially, that even though the genetic variants found in the BBJ would probably still be correlated with Japanese population structure, they would not be associated with *European* population structure. (The trade-off is that variants identified in BBJ would also likely have lower effect sizes than those in GWAS of Europeans.) To test this hypothesis, they performed PCA on samples of 4 European-descended populations in the 1000 Genomes Project as well as Sardinians and examined to what extent the effect sizes of variants associated with height were correlated with principal component (PC) loading (how much a PC is influenced by a particular variant). They used variants from 3 height GWAS: 2 GWAS performed on people of European descent (GIANT and UK BioBank) and the BBJ.[^footer5] [^footer6] As expected, the effect sizes from the variants associated with height in the GIANT and UKB studies were associated with PC loading, but the variants associated with height in the BBJ study were not. This is compelling evidence that the associations between the BBJ variants and height will are not inflated European population stratification, and can be used to investiage whether European population have differing genetic height potential.
 
-[^footer4]: https://pubmed.ncbi.nlm.nih.gov/28189464/
+[^footer4]: [Pubmed](https://pubmed.ncbi.nlm.nih.gov/28189464/)
 
-[^footer5]: http://portals.broadinstitute.org/collaboration/giant/index.php/GIANT_consortium
+[^footer5]: [GIANT page](http://portals.broadinstitute.org/collaboration/giant/index.php/GIANT_consortium)
 
-[^footer6]: https://www.ukbiobank.ac.uk/
+[^footer6]: [UK BioBank homepage](https://www.ukbiobank.ac.uk/)
 
 ![Association between PCs and effect sizes across GIANT, UKB, and BBJ](/images/fig1.png)
 
@@ -43,4 +43,4 @@ To actually determine if the variants associated with increased height were had 
 Chen et al. go on to use several more tests to provide support for the difference in average height PGS between Sardinians and mainland Europeans being due to polygenic selection in the last 10,000 years, but that's not my primary interest in this paper. That inhabitants of a relatively small island have smaller stature than mainland members of the same species has been seen repeatedly in many
 [species](https://en.wikipedia.org/wiki/Insular_dwarfism), so it's very likely that the shorter height difference in Sardinians is due to natural selection. I may come back to explore this more in detail later, but the most interesting finding to me in this paper is that phenotypic differences in a polygenic trait between two populations has been demonstrated to be at least partially due to average genetic differences in the population that is not explained by population stratification. I am hopeful that future studies use this approach to explore population differences in other polygenic traits, and that future GWAS that incorporate rare variants can increase power to detect these differences.[^footer7]
 
-[^footer7]: https://www.biorxiv.org/content/10.1101/588020v1
+[^footer7]: [Preprint link](https://www.biorxiv.org/content/10.1101/588020v1)
