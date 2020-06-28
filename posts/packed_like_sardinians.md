@@ -17,12 +17,12 @@ Other studies have looked into potential genetic causes of height differences am
 
 [^footer3]: http://www.biostat.jhsph.edu/~iruczins/teaching/misc/2008.140.668/papers/price2006.pdf
 
-![DAG of population stratification](https://github.com/softsweep/softsweep.github.io/images/dag1.png)
+![DAG of population stratification](/images/dag1.png)
 
 To evince genetic causation of height differences between populations, one would need to adjust for population structure and then determine if a genetic variant were still associated with height (green arrow in picture below). Studies often use
 [principal component analysis (PCA)](https://setosa.io/ev/principal-component-analysis/) to attempt to adjust for population structure, but this method often does not fully deal with population stratification, especially for more distantly related populations. In fact, there are no silver bullets for dealing with populations stratification yet. Admixture studies handle structure the best, but that is a conversation for another post.
 
-![DAG showing genes causing height](images/dag2.png)
+![DAG showing genes causing height](/images/dag2.png)
 
 So, if population stratification is such a thorn for evincing genetic causes of differences in polygenic traits between populations, how did Chen et al. overcome it to provide robust evidence that Sardinians have a genetic predisposition for shorter height than mainland Europeans, and how did they show that this difference propensity is likely due to recent selection? What makes Chen et al. unique is that, unlike other studies that investigate height differences in Europeans, they did not rely on summary statistics from genome wide association studies (GWAS) performed on Europeans. Instead, they used summary statistics from a height GWAS using BioBank Japan (BBJ), which has all Japanese participants.[^footer4] Their reasoning was, essentially, that even though the genetic variants found in the BBJ would probably still be correlated with Japanese population structure, they would not be associated with *European* population structure. (The trade-off is that variants identified in BBJ would also likely have lower effect sizes than those in GWAS of Europeans.) To test this hypothesis, they performed PCA on samples of 4 European-descended populations in the 1000 Genomes Project as well as Sardinians and examined to what extent the effect sizes of variants associated with height were correlated with principal component (PC) loading (how much a PC is influenced by a particular variant). They used variants from 3 height GWAS: 2 GWAS performed on people of European descent (GIANT and UK BioBank) and the BBJ.[^footer5] [^footer6] As expected, the effect sizes from the variants associated with height in the GIANT and UKB studies were associated with PC loading, but the variants associated with height in the BBJ study were not. This is compelling evidence that the associations between the BBJ variants and height will are not inflated European population stratification, and can be used to investiage whether European population have differing genetic height potential.
 
@@ -32,13 +32,13 @@ So, if population stratification is such a thorn for evincing genetic causes of 
 
 [^footer6]: https://www.ukbiobank.ac.uk/
 
-![Association between PCs and effect sizes across GIANT, UKB, and BBJ](images/fig1.png)
+![Association between PCs and effect sizes across GIANT, UKB, and BBJ](/images/fig1.png)
 
 To actually determine if the variants associated with increased height were had a lower allele frequency in Sardians vs. mainland Europeans, Chen et al. created
 [polygenic scores (PGS)](https://en.wikipedia.org/wiki/Polygenic_score) for height for Sardinians and each of the 4 mainlander populations. PGS are essentially sums of genetic variants weighted by their effect sizes and directions, so a higher PGS would indicate than an individual is more likely to be tall compared to someone with a lower PGS. Now, for a particular individual, a PGS may not accurately predict their height, but Chen et al. took the mean PGS for each population and compared them to one another using an excess variance test, which tests whether the differences in height PGS between populations is larger than would be expected by
 [genetic drift](https://en.wikipedia.org/wiki/Genetic_drift). Sure enough, the differences in population PGS remained statistically significant when using the variants from the BBJ.
 
-![PGS between European populations](images/fig2.png)
+![PGS between European populations](/images/fig2.png)
 
 Chen et al. go on to use several more tests to provide support for the difference in average height PGS between Sardinians and mainland Europeans being due to polygenic selection in the last 10,000 years, but that's not my primary interest in this paper. That inhabitants of a relatively small island have smaller stature than mainland members of the same species has been seen repeatedly in many
 [species](https://en.wikipedia.org/wiki/Insular_dwarfism), so it's very likely that the shorter height difference in Sardinians is due to natural selection. I may come back to explore this more in detail later, but the most interesting finding to me in this paper is that phenotypic differences in a polygenic trait between two populations has been demonstrated to be at least partially due to average genetic differences in the population that is not explained by population stratification. I am hopeful that future studies use this approach to explore population differences in other polygenic traits, and that future GWAS that incorporate rare variants can increase power to detect these differences.[^footer7]
